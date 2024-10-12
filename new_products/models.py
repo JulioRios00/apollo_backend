@@ -26,7 +26,7 @@ class Product(models.Model):
     @property
     def promotional_price(self):
         discount = DISCOUNTS_BY_CATEGORIES.get(self.category, 0)
-        return float(self.price) * (1 - discount)
+        return "{:.2f}".format(float(self.price) * (1 - discount))
     
     def __str__(self):
         return self.name
