@@ -1,11 +1,11 @@
 from django.db import models
 
 PRODUCT_CATEGORIES = [
-    "portable_appliances",
-    "furniture",
-    "refrigerator",
-    "smartphones",
-    "eletronics",
+    ("portable_appliances", "Eletroportáteis"),
+    ("furniture", "Móveis"),
+    ("refrigerator", "Geladeira"),
+    ("smartphones", "Smartphones"),
+    ("eletronics", "Eletrônicos"),
 ]
 
 DISCOUNTS_BY_CATEGORIES = {
@@ -16,21 +16,17 @@ DISCOUNTS_BY_CATEGORIES = {
     "eletronics": 0.043,
 }
 
-def validate_categories(value):
-    if value not in PRODUCT_CATEGORIES:
-        raise ValueError("Invalid product category")
-
 class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     color = models.CharField(max_length=25)
-    category = models.CharField(max_length=60, validators=[validate_categories])
+    category = models.CharField(max_length=60, choices=PRODUCT_CATEGORIES)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     
     @property
     def promotional_price(self):
         discount = DISCOUNTS_BY_CATEGORIES.get(self.category, 0)
-        return self.price * (1 - discount)
+        return float(self.price) * (1 - discount)
     
     def __str__(self):
         return self.name
