@@ -17,23 +17,34 @@ This is a product management API developed with Django and Django REST Framework
 ## How to Set Up and Run the Application
 
 Clone this repository to your local machine:
-
+```
 https://github.com/JulioRios00/apollo_backend.git
+```
+
 
 In the root directory of the project, create a virtual environment:
 python -m venv venv source venv/bin/activate # For Mac/Linux
 
 ## Install the necessary dependencies:
+```
 pip install -r requirements.txt
+```
+
 
 
 ### Configure the Database
 
 Run the migrations to set up the database:
+```
 python manage.py migrate
+```
+
 
 ## Run the Development Server
+```
 python manage.py runserver
+```
+
 
 The application will be available at http://127.0.0.1:8000/
 
