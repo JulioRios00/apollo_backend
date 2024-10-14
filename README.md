@@ -1,52 +1,46 @@
 # Product Management API
 
-  ## Descrição
-  Esta é uma API de gerenciamento de produtos desenvolvida com Django e Django REST Framework. A aplicação permite cadastrar, listar e calcular o preço promocional dos produtos com base em suas categorias.
+## Description
+This is a product management API developed with Django and Django REST Framework. The application allows you to register, list, and calculate the promotional price of products based on their categories.
 
-## Funcionalidades
-  Cadastro de novos produtos com os campos: nome, descrição, cor, categoria e preço.
-  Cálculo automático do preço promocional baseado na categoria do produto.
-  Listagem dos produtos cadastrados.
+## Features
+- Register new products with fields: name, description, color, category, and price.
+- Automatic calculation of the promotional price based on the product category.
+- Listing of registered products.
+
+## Technologies Used
+- Python 3.11
+- Django 5.x
+- Django REST Framework
+- SQLite
+
+## How to Set Up and Run the Application
+
+Clone this repository to your local machine:
+
+https://github.com/JulioRios00/apollo_backend.git
+
+In the root directory of the project, create a virtual environment:
+python -m venv venv source venv/bin/activate # For Mac/Linux
+
+## Install the necessary dependencies:
+pip install -r requirements.txt
 
 
-  ## Tecnologias Utilizadas
-  - Python 3.11
-  - Django 5.x
-  - Django REST Framework
-  - SQLite 
-  
-  ## Como Configurar e Executar a Aplicação
+### Configure the Database
 
+Run the migrations to set up the database:
+python manage.py migrate
 
-  Clone este repositório para a sua máquina local:
+## Run the Development Server
+python manage.py runserver
 
-  https://github.com/JulioRios00/apollo_backend.git
+The application will be available at http://127.0.0.1:8000/
 
-  No diretório raiz do projeto, crie um ambiente virtual:
+## Available Routes
 
-  python -m venv venv
-  - source venv/bin/activate  # Para Mac/Linux
-
-  ## Instale as dependências necessárias:
-
-  pip install -r requirements.txt
-
-  ### Configurar o Banco de Dados
-
-  Rode as migrações para configurar o banco de dados:
-
-  python manage.py migrate
-
-  ## Rodar o Servidor de Desenvolvimento
-
-  python manage.py runserver
-
-  A aplicação estará disponível em http://127.0.0.1:8000/
-
-  ## Rotas Disponíveis
-
-  - GET /products/ – Listar todos os produtos.
-  - POST /products/ – Criar um novo produto
+- GET /products/ – List all products.
+- POST /products/ – Create a new product
     
-  Exemplo de Requisição POST para Cadastro de Produto
-  URL: http://127.0.0.1:8000/products/
+Example POST Request for Product Registration:
+URL: http://127.0.0.1:8000/products/
