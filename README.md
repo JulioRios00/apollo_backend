@@ -26,7 +26,6 @@
 
   python -m venv venv
   - source venv/bin/activate  # Para Mac/Linux
-  - .\venv\Scripts\activate  # Para Windows
 
   ## Instale as dependências necessárias:
 
