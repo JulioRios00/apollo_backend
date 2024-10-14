@@ -21,12 +21,12 @@ class Product(models.Model):
     description = models.TextField()
     color = models.CharField(max_length=25)
     category = models.CharField(max_length=60, choices=PRODUCT_CATEGORIES)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=0)
     
     @property
     def promotional_price(self):
         discount = DISCOUNTS_BY_CATEGORIES.get(self.category, 0)
-        return "{:.2f}".format(float(self.price) * (1 - discount))
+        return float(self.price) * (1 - discount)
     
     def __str__(self):
         return self.name
