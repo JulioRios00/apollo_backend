@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^quz7fc@hi*#(t(#!ygcuw43ugn*r79#f0)8ku)lxyvd$w%gph'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['julioaraujo00.pythonanywhere.com']
 
 
 # Application definition
@@ -56,7 +56,7 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", 
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'apollo_backend.urls'
